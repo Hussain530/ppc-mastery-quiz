@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>PPC Mastery Quiz</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <main class="app-shell">
+    <header class="topbar">
+      <div>
+        <p class="eyebrow">ECONOMICS PRACTICE LAB</p>
+        <h1>Production Possibility Curves</h1>
+      </div>
+      <div class="timer-wrap" aria-live="polite">
+        <span class="timer-label">TIME LEFT</span>
+        <span id="timer" class="timer">30:00</span>
+      </div>
+    </header>
+
+    <section id="intro-panel" class="intro-panel">
+      <div class="intro-copy">
+        <span class="pill">30 questions</span>
+        <h2>Test your command of the PPC.</h2>
+        <p>Work through definitions, graph interpretation, opportunity-cost calculations, efficiency, economic growth, and tradeoffs. Your timer starts as soon as you begin.</p>
+        <ul class="feature-list">
+          <li><span>01</span> Mixed difficulty and question types</li>
+          <li><span>02</span> Instant score and topic breakdown</li>
+          <li><span>03</span> Detailed explanations for every missed answer</li>
+        </ul>
+        <button id="start-btn" class="primary-btn">Start quiz <span>→</span></button>
+      </div>
+      <div class="intro-art" aria-hidden="true">
+        <svg viewBox="0 0 360 300" role="img">
+          <defs>
+            <linearGradient id="introFill" x1="0" x2="1" y1="0" y2="1">
+              <stop offset="0%" stop-color="#a7f3d0" stop-opacity=".65"/>
+              <stop offset="100%" stop-color="#38bdf8" stop-opacity=".1"/>
+            </linearGradient>
+          </defs>
+          <path d="M47 247H318M47 247V38" stroke="#94a3b8" stroke-width="2"/>
+          <path d="M62 239 C126 226 150 189 186 141 C222 93 259 65 308 49 L308 247Z" fill="url(#introFill)"/>
+          <path d="M62 239 C126 226 150 189 186 141 C222 93 259 65 308 49" fill="none" stroke="#10b981" stroke-width="5" stroke-linecap="round"/>
+          <path d="M62 239 C107 216 144 179 185 126 C231 67 264 48 308 35" fill="none" stroke="#38bdf8" stroke-width="4" stroke-dasharray="8 8"/>
+          <circle cx="188" cy="139" r="7" fill="#f97316"/>
+          <circle cx="236" cy="104" r="7" fill="#f97316"/>
+          <text x="195" y="132" fill="#475569" font-size="13">efficient</text>
+          <text x="240" y="98" fill="#475569" font-size="13">growth</text>
+          <text x="285" y="270" fill="#64748b" font-size="13">Good X</text>
+          <text x="16" y="45" fill="#64748b" font-size="13">Good Y</text>
+        </svg>
+      </div>
+    </section>
+
+    <section id="quiz-panel" class="quiz-panel hidden">
+      <div class="quiz-meta">
+        <div class="progress-info">
+          <span id="question-count">Question 1 of 30</span>
+          <span id="progress-percent">3% complete</span>
+        </div>
+        <div class="progress-track"><div id="progress-bar" class="progress-bar"></div></div>
+      </div>
+
+      <div class="quiz-layout">
+        <aside class="question-nav">
+          <div class="nav-heading">
+            <h3>Question map</h3>
+            <span id="answered-count">0/30</span>
+          </div>
+          <div id="question-grid" class="question-grid"></div>
+          <div class="legend">
+            <span><i class="legend-dot current"></i> Current</span>
+            <span><i class="legend-dot answered"></i> Answered</span>
+          </div>
+        </aside>
+
+        <section class="question-area">
+          <div class="question-header">
+            <div>
+              <span id="question-type" class="question-type">CONCEPT</span>
+              <h2 id="question-title"></h2>
+            </div>
+            <span id="question-number" class="question-number">01</span>
+          </div>
+          <div id="visual-container" class="visual-container hidden"></div>
+          <div id="options" class="options" role="radiogroup" aria-label="Answer choices"></div>
+          <div class="question-footer">
+            <button id="prev-btn" class="secondary-btn">← Previous</button>
+            <button id="next-btn" class="primary-btn">Next question <span>→</span></button>
+          </div>
+        </section>
+      </div>
+    </section>
+
+    <section id="results-panel" class="results-panel hidden">
+      <div class="results-hero">
+        <span class="pill">QUIZ COMPLETE</span>
+        <h2 id="results-title">Well done.</h2>
+        <p id="results-summary"></p>
+        <div class="score-ring"><span id="score-value">0%</span><small>score</small></div>
+      </div>
+      <div class="results-stats">
+        <div><span id="correct-stat">0</span><small>Correct</small></div>
+        <div><span id="incorrect-stat">0</span><small>To review</small></div>
+        <div><span id="time-stat">00:00</span><small>Time used</small></div>
+      </div>
+      <div id="review-section" class="review-section"></div>
+      <button id="restart-btn" class="primary-btn">Try again <span>↻</span></button>
+    </section>
+  </main>
+  <script src="script.js"></script>
+</body>
+</html>
